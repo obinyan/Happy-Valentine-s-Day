@@ -17,6 +17,13 @@
     <span></span>
 </div>
 
+<div class="aud">
+    <audio id="bg-audio"  loop>
+  <source src="Kaash Paige - Love Songs (Official Music Video) [uwIIVeGq4Xg].mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
         </div>
     </body>
     <style>
@@ -25,6 +32,11 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+        /*#bg-audio {
+  display: none;
+}*/
+
 
         img{
             display: block;
@@ -116,4 +128,18 @@
     }
         }
     </style>
+
+<script>
+  const audio = document.getElementById("bg-audio");
+
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      audio.currentTime = 10; // start at 30 seconds
+      audio.play().catch(err => {
+        console.log("Autoplay blocked:", err);
+      });
+    }, 3000); // 3 seconds delay
+  });
+</script>
+
     </html>
